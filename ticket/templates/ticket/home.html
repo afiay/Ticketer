@@ -24,10 +24,11 @@
 			   			<span class="badge badge-secondary">{{ ticket.status }}</span>
 			 		{% elif ticket_location.status %}
 			   			<span class="badge badge-light">{{ ticket_location.status }}</span>
+					{% elif ticket.image %}
+			   			<img src={{ ticket.author.ticket.image.url }}>
 			   		{% endif %}
 			   </h2>
 			    <p class="article-content" border="border-primary">{{ ticket.content }}</p>
-
 				<div class="replie-thread">
 					<h5>Kommentar</h5>
 					{% if not ticket.replies.all %}
@@ -55,7 +56,6 @@
 			</div>
 		</article>
 	{% endfor %}
-
 
 	{% if is_paginated %}
 		

@@ -28,7 +28,7 @@
 		    <p class="article-content">{{ object.content }}</p>
 			{% if object.author == user or user.is_staff %}
 				<div>
-					<img src="{{ img_obj.image }}"></img>
+					<img src="{{ ticket.image.image }}" style="max-height:300px"></img>
 				</div>
 				<div class="button_edit">
 					<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'ticket-update' object.id %}">Edit</a>

@@ -42,7 +42,10 @@ class Ticket(models.Model):
 	]
 	ticket_location = [
 	    ('ALL', 'ALL'),
-	    ('AHL_station_1', 'Ahl_station_2'),
+	    ('Logistics_1', 'Logistics_2'),
+	    ('Logistics_2', 'Logistics_3'),
+	    ('Logistics_3', 'Logistics_4'),
+	    ('Logistics_4', 'Logistics_5'),
 	    ('AHL_station_2', 'Ahl_station_3'),
 	    ('Ahl_station_3', 'Ahl_station_4'),
 	    ('Ahl_station_4', 'Ahl_station_5'),
@@ -75,7 +78,7 @@ class Ticket(models.Model):
 
 	title = models.CharField(max_length=100, verbose_name='Ar Nummer / Plockplats')
 	ticket_location = models.CharField(max_length=36, choices=ticket_location, default='0')
-	image = models.ImageField(upload_to='ticket_pics/%Y/%m/%d/', blank=True)
+	image = models.ImageField(upload_to='media/images', blank=True)
 	content = models.TextField()
 	date_ticketed = models.DateTimeField(default=timezone.now)
 	status = models.CharField(max_length=1, choices=ticket_status, default='N')

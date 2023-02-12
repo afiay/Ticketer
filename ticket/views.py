@@ -72,7 +72,7 @@ class TicketDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
 
 class TicketCreateView(LoginRequiredMixin, CreateView):
 	model = Ticket
-	fields = ['title', 'ticket_type', 'urgency', 'content', 'ticket_location', 'image']
+	fields = ['title', 'ticket_type', 'urgency', 'content', 'ticket_location']
 
 	def form_valid(self,form):
 		form.instance.author = self.request.user
@@ -97,7 +97,7 @@ class TicketReplieView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 class TicketUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
 	model = Ticket
-	fields = ['title', 'content', 'ticket_location', 'status', 'image']
+	fields = ['title', 'content', 'ticket_location', 'status']
 	permission_required = "ticket.change_ticket"
 	
 	def form_valid(self,form):
@@ -109,4 +109,3 @@ class TicketDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
 	success_url = '/'
 
 	permission_required = "ticket.delete_ticket"
-
