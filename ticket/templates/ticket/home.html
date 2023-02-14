@@ -2,6 +2,7 @@
 {% block content %}
 	{% for ticket in tickets %}
 		<article class="media content-section">
+
 			<img class="rounded-circle article-img" src="{{ ticket.author.profile.image.url }}">
 				<h5>
 					<span class="badge badge-secondary">Brotskande: {{ ticket.urgency }}</span> 
@@ -56,9 +57,8 @@
 			</div>
 		</article>
 	{% endfor %}
-
 	{% if is_paginated %}
-		
+
 		{% if page_obj.has_previous %}
 			<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
 			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>

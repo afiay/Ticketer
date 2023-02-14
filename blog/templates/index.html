@@ -1,38 +1,10 @@
 {% extends "ticket/base.html" %}
 {% block content %}
-<style>
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
-
-    .head_text {
-        color: white;
-    }
-
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-    }
-</style>
-
-<header class="masthead">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-12 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
-                    <p class="text-light">We Love Django As much as you do..! &nbsp
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 <div class="container">
     <div class="row">
         <!-- Blog Entries Column -->
+        {% if user.is_authenticated %}
+        <h1>Welcome </h1>
         <div class="col-md-12 mt-3 left">
             {% for post in post_list %}
             <div class="card mb-4">
@@ -44,8 +16,1110 @@
                 </div>
             </div>
             {% endfor %}
+            {% else %} 
+   <h3>Well done on getting this far!</h3>
+    <p>
+        You've covered the content. You've absorbed the concepts and you've written the
+        code. Now it's time to implement all your great ideas. Show the world what you can do.
+        Build something that is useful and usable and is an expression of your abilty to solve interesting problems.
+        Remember, the moment you begin work on your project it's no longer about you.
+        It's about your users and what problems your solution solves for them.
+        Keep them in mind every step of the way. By doing so, you’ll create something of real value
+    </p>
+    <h1>
+        Diploma in Full Stack Software Development<br><br>Assessment Handbook
+    </h1>
+    <p>
+        Your go to guide for all things assessment related including project ideas,
+        assessment criteria and submission details.
+    </p>
+
+    <h1 id="project-4">
+        Portfolio Project 4
+    </h1><br>
+    <h2>
+        Full-Stack Toolkit
+    </h2><br>
+    <p>
+        Project purpose:
+    </p><br>
+    <p>
+        In this project, you'll build a Full-Stack site based on business logic used to
+        control a centrally-owned dataset. You will set up an authentication mechanism
+        and provide role-based access to the site's data or other activities based on
+        the dataset.<br>
+    </p>
+    <h3>
+        Main Technologies
+    </h3><br>
+    <h4>
+        <ul>
+            <li>HTML, CSS, JavaScript, Python+Django</li>
+            <li>Relational database (recommending MySQL or Postgres)</li>
+        </ul>
+    </h4>
+    <h3>
+        Project Ideas
+    </h3><br>
+
+    <p>
+        You can either choose to build the website based on Project Idea 0 or take
+        inspiration from the other example ideas below.
+    </p>
+    <h3>
+        Project Idea 0
+    </h3><br>
+    <p>
+        Bring your idea(s) to life, based on providing value to users to address a
+        specific factual or imagined need. Use the relevant project assessment criteria
+        as a guide to the minimum required functionality
+    </p>
+    <h3>
+        Project Example Idea 1
+    </h3><br>
+    <p>
+        <strong>External user’s goal:</strong>
+    </p>
+    <ul>
+        <li>The user would like to book one or more guests for a meal in a restaurant
+            and a particular time and date.
+        </li>
+    </ul>
+    <p>
+        <strong>Site owner's goal:</strong>
+    </p>
+    <ul>
+        <li>The site owner would like the ability to take online bookings for their
+            eatery.
+        </li>
+    </ul>
+    <p>
+        <strong>Potential features to include:</strong>
+    </p>
+    <ul>
+        <li>Date/Time-based bookings
+        </li><li>Avoid double bookings
+        </li><li>Multiple table occupancies
+        </li><li>Cancellations
+        </li><li>Menu
+        </li>
+    </ul>
+    <h3>
+        Project Example Idea 2
+    </h3>
+    <ul>
+        <li>Reddit style news site
+        </li>
+    </ul>
+    <p>
+        <strong>External user’s goal:</strong>
+    </p>
+    <ul>
+        <li>Users want to post, read and comment on news stories.
+        </li>
+    </ul>
+    <p>
+        <strong>Site owner's goal:</strong>
+    </p>
+    <ul>
+        <li>The site owner would like to create a discussion community.
+        </li>
+    </ul>
+    <p>
+        <strong>Potential features to include:</strong>
+    </p>
+    <ul>
+        <li>Posts can be up/downvoted
+        </li><li>Comments can be left on a post
+        </li><li>Time/Date of posting
+        </li><li>Topic groupings/categories
+        </li>
+    </ul>
+    <h1>
+        Full-Stack Toolkit
+    </h1>
+    <h1>
+        Assessment Criteria
+    </h1>
+    <h3>Learning Outcomes</h3>
+    <table>
+        <tbody><tr>
+            <td>LO1
+            </td>
+            <td>Use an Agile methodology to plan and design a Full-Stack Web application
+                using an MVC framework and related contemporary technologies.
+            </td>
+        </tr>
+        <tr>
+            <td>LO2
+            </td>
+            <td>Implement a data model, application features and business logic to
+                manage, query and manipulate data to meet given needs in a particular real-world
+                domain.
+            </td>
+        </tr>
+        <tr>
+            <td>LO3
+            </td>
+            <td>Identify and apply authorisation, authentication and permission features
+                in a Full-Stack web application solution.
+            </td>
+        </tr>
+        <tr>
+            <td>LO4
+            </td>
+            <td>Create manual and/or automated tests for a Full-Stack Web application
+                using an MVC framework and related contemporary technologies
+            </td>
+        </tr>
+        <tr>
+            <td>LO5
+            </td>
+            <td>Use a distributed version control system and a repository hosting service
+                to document, develop and maintain a Full-Stack Web application using an MVC
+                framework and related contemporary technologies.
+            </td>
+        </tr>
+        <tr>
+            <td>LO6
+            </td>
+            <td>Deploy a Full-Stack Web application using an MVC framework and related
+                contemporary technologies to a cloud-based platform
+            </td>
+        </tr>
+        <tr>
+            <td>LO7
+            </td>
+            <td>Understand and use object-based software concepts
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <span class="header-blue">LO1</span> Use an Agile methodology to plan and design a Full-Stack Web application
+        using an MVC framework and related contemporary technologies
+    </p>
+    <table>
+        <tbody><tr>
+            <td>1.1
+            </td>
+            <td>Design a Front-End for a data-driven web application that meets
+                accessibility guidelines, follows the principles of UX design, meets its given
+                purpose and provides a set of user interactions.
+            </td>
+        </tr>
+        <tr>
+            <td>1.2
+            </td>
+            <td>Implement custom HTML and CSS code to create a responsive Full-Stack
+                application consisting of one or more HTML pages with relevant responses to user
+                actions and a set of data manipulation functions
+            </td>
+        </tr>
+        <tr>
+            <td>1.3
+            </td>
+            <td>Build a database-backed MVC web application that allows users to store
+                and manipulate data records about a particular domain.
+            </td>
+        </tr>
+        <tr>
+            <td>1.4
+            </td>
+            <td>Design a database structure relevant for your domain, consisting of a
+                minimum of one custom model.
+            </td>
+        </tr>
+        <tr>
+            <td>1.5
+            </td>
+            <td>Use an Agile tool to manage the planning and implementation of all
+                significant functionality
+            </td>
+        </tr>
+        <tr>
+            <td>1.6
+            </td>
+            <td>Document and implement all User Stories and map them to the project
+                within an Agile tool
+            </td>
+        </tr>
+        <tr>
+            <td>1.7
+            </td>
+            <td>Write Python code that is consistent in style and conforms to the PEP8
+                style guide and validated HTML and CSS code.
+            </td>
+        </tr>
+        <tr>
+            <td>1.8
+            </td>
+            <td>
+                Include sufficient custom Python logic to demonstrate your proficiency in
+                the language
+            </td>
+        </tr>
+        <tr>
+            <td>1.9
+            </td>
+            <td>Include functions with compound statements such as if conditions and/or
+                loops in your Python code
+            </td>
+        </tr>
+        <tr>
+            <td>1.10
+            </td>
+            <td>Write code that meets minimum standards for readability<strong>
+                </strong>(comments, indentation, consistent and meaningful naming
+                conventions).
+            </td>
+        </tr>
+        <tr>
+            <td>1.11
+            </td>
+            <td>Name files consistently and descriptively, without spaces or
+                capitalisation to allow for cross-platform compatibility.
+            </td>
+        </tr>
+        <tr>
+            <td>1.12
+            </td>
+            <td>Document and implement all User Stories within the Agile tool and map
+                them to the project goals
+            </td>
+        </tr>
+        <tr>
+            <td>1.13
+            </td>
+            <td>Document the UX design work undertaken for this project, including any wireframes,
+                mockups, diagrams, etc.,created as part of the design process and its reasoning.
+                Include diagrams created as part of the design process and demonstrate that these
+                have been followed through to implementation
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <span class="header-blue">LO2</span> Implement a data model, application features and business logic to manage,
+        query and manipulate data to meet given needs in a particular real-world domain.
+    </p>
+    <table>
+        <tbody><tr>
+            <td>2.1
+            </td>
+            <td>Develop the model into a usable database where data is stored in a
+                consistent and well-organised manner.
+            </td>
+        </tr>
+        <tr>
+            <td>2.2
+            </td>
+            <td>Create functionality for users to create, locate, display, edit and
+                delete records
+            </td>
+        </tr>
+        <tr>
+            <td>2.3
+            </td>
+            <td>All changes to the data should be notified to relevant user
+            </td>
+        </tr>
+        <tr>
+            <td>2.4
+            </td>
+            <td>Implement at least one form, with validation, that allows users to create
+                and edit models in the backend
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <span class="header-blue">LO3</span> Identify and apply authorisation, authentication and permission features in
+        a Full-Stack web application solution
+    </p>
+    <table>
+        <tbody><tr>
+            <td>3.1
+            </td>
+            <td>Apply role-based login and registration functionality
+            </td>
+        </tr>
+        <tr>
+            <td>3.2
+            </td>
+            <td>The current login state is reflected to the user
+            </td>
+        </tr>
+        <tr>
+            <td>3.3
+            </td>
+            <td>Users should not be permitted to access restricted content or
+                functionality prior to role-based login.
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <span class="header-blue">LO4</span> Create manual and/or automated tests for a Full-Stack Web application
+        using an MVC framework and related contemporary technologies
+    </p>
+    <table>
+        <tbody><tr>
+            <td>4.1
+            </td>
+            <td>Design and implement manual and/or automated Python test procedures to assess
+                functionality,
+                <p>
+                    usability, responsiveness and data management within the entire web application
+            </p></td>
+        </tr>
+        <tr>
+            <td>4.2
+            </td>
+            <td>Design and implement manual and/or automated JavaScript test procedures to assess
+                functionality,
+                <p>
+                    usability, responsiveness and data management within the entire web application
+            </p></td>
+        </tr>
+        <tr>
+            <td>4.3
+            </td>
+            <td>Document all implemented testing in the README.
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <span class="header-blue">LO5</span> Use a distributed version control system and a repository hosting
+        service to document, develop and maintain a Full-Stack Web application using an
+        MVC framework and related contemporary technologies
+    </p>
+
+    <table>
+        <tbody><tr>
+            <td>5.1
+            </td>
+            <td>Use Git &amp; GitHub for version control of a Full-Stack web application up
+                to deployment, using commit messages to document the development process.
+            </td>
+        </tr>
+        <tr>
+            <td>5.2
+            </td>
+            <td>Commit final code that is free of any passwords or security-sensitive
+                information to the repository and the hosting platform
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <br>
+    </p>
+    <p>
+        <span class="header-blue">LO6</span> Deploy a Full-Stack Web application using an MVC framework and related
+        contemporary technologies to a cloud-based platform
+    </p>
+    <table>
+        <tbody><tr>
+            <td>6.1
+            </td>
+            <td>Deploy a final version of the Full-Stack application code to a
+                cloud-based hosting platform and test to ensure it matches the development
+                version
+            </td>
+        </tr>
+        <tr>
+            <td>6.2
+            </td>
+            <td>Ensure that the final deployed code is free of commented out code and has
+                no broken internal links
+            </td>
+        </tr>
+        <tr>
+            <td>6.3
+            </td>
+            <td>Document the deployment process in a README file in English
+            </td>
+        </tr>
+        <tr>
+            <td>6.4
+            </td>
+            <td>Ensure the security of the deployed version, making sure to not include
+                any passwords in the git repository, that all secret keys are hidden in
+                environment variables or in files that are in .gitignore, and that DEBUG mode is
+                turned off
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <span class="header-blue">LO7</span> Understand and use object-based software concepts
+    </p>
+    <table>
+        <tbody><tr>
+            <td>7.1
+            </td>
+            <td>Design a custom data model that fits the purpose of the project
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        <br>
+    </p>
+
+    <h2>
+        All Pass criteria must be achieved for a pass to be awarded.
+    </h2>
+    <p>
+        It is expected that project work submitted for
+        this unit will demonstrate the same knowledge and skills shown in
+        HTML/CSS/JavaScript/Python Essentials modules across the grading levels. The
+        learner demonstrates characteristics of higher-level performance as described
+        below.<br><br><br>
+    </p>
+    <p>
+        Merit Performance
+    </p>
+    <p>
+        To evidence performance at the MERIT level, a learner will, in general, demonstrate
+        characteristics of performance at the MERIT level, as suggested below. However, the
+        learner must achieve ALL listed merit criteria.
+    </p>
+    <p>
+        The learner has a clear rationale for the development of this project and has
+        produced a fully functioning, well-documented, relational database-backed,
+        Full-Stack application for a real-life audience, with a complete set of CRUD
+        creation, reading, updating and deletion of data records) features. Data
+        validation, API handling and user feedback are all evident in the code and the
+        working application. Templates are used to produce working features correctly.
+        There are no logic errors in the code, and the application functions as
+        expected.
+    </p>
+    <p>
+        The finished project has a clear, well-defined purpose addressing the needs of a
+        particular target audience (or multiple related audiences) and a particular data
+        domain. Its purpose would be immediately evident to a new user without having
+        to look at supporting documentation. The user is kept informed of progress and
+        actions through feedback and, where large data sets are being loaded, progress
+        indicators.
+    </p>
+    <p>
+        The web application design follows the principles of UX design and accessibility
+        guidelines, and the site is fully responsive.
+    </p>
+    <p>
+        Data is fully modelled and matches the schema. The schema design is documented
+        in the README. Datastore configuration is kept in a single location and can be
+        changed easily. Configuration and settings files are well-organised, and there
+        are different versions for different branches.
+    </p>
+    <table>
+        <tbody><tr>
+            <td>1.1
+            </td>
+            <td>Design a Front-End for a Full-Stack application following UX design
+                principles, which meets accessibility guidelines, is easy to navigate and allows
+                the user to find information and resources intuitively.
+            </td>
+        </tr>
+        <tr>
+            <td>1.2
+            </td>
+            <td>Create templates, writing code that demonstrates a solid understanding of
+                template syntax, logic and usage
+            </td>
+        </tr>
+        <tr>
+            <td>1.3
+            </td>
+            <td>Provide evidence of refining Epics to User Stories to Tasks
+            </td>
+        </tr>
+        <tr>
+            <td>1.4
+            </td>
+            <td>Clear user acceptance criteria have been defined.
+            </td>
+        </tr>
+        <tr>
+            <td>1.5
+            </td>
+            <td>Should-have prioritised user stories should not be more than 60% of the
+                timebox user story points total.
+            </td>
+        </tr>
+        <tr>
+            <td>2.1
+            </td>
+            <td>Design a Full-Stack application that lets the user initiate and control
+                actions and gives immediate and complete feedback on data processes
+            </td>
+        </tr>
+        <tr>
+            <td>2.2
+            </td>
+            <td>Write robust code that is free of errors in all parts of the application.
+            </td>
+        </tr>
+        <tr>
+            <td>2.3
+            </td>
+            <td>Implement a Full-Stack application whose purpose is quickly evident to a
+                new user.
+            </td>
+        </tr>
+        <tr>
+            <td>2.4
+            </td>
+            <td>Maintain database configuration in a single location where it can be
+                changed easily
+            </td>
+        </tr>
+        <tr>
+            <td>2.5
+            </td>
+            <td>Maintain a Procfile, requirements.txt file, etc.
+            </td>
+        </tr>
+        <tr>
+            <td>2.6
+            </td>
+            <td>All Create, Read, Update and Delete (CRUD) functionality is present and
+                working.
+            </td>
+        </tr>
+        <tr>
+            <td>2.7
+            </td>
+            <td>All Create, Read, Update and Delete actions are immediately reflected in
+                the user interface.
+            </td>
+        </tr>
+        <tr>
+            <td>3.1
+            </td>
+            <td>Present a clear rationale for the development of the project in the
+                README, demonstrating that it has a clear, well-defined purpose addressing the
+                needs of a particular target audience (or multiple related audiences),
+                explaining the data, and explaining the security features considered
+            </td>
+        </tr>
+        <tr>
+            <td>4.1
+            </td>
+            <td>Fully document the results of well-planned automated testing procedures
+                to assess the website’s functionality, usability and responsiveness. Include an
+                evaluation of bugs found and their fixes and explanation of any bugs that are
+                left unfixed
+            </td>
+        </tr>
+        <tr>
+            <td>5.1
+            </td>
+            <td>Describe the data schema fully in the README file
+            </td>
+        </tr>
+        <tr>
+            <td>5.2
+            </td>
+            <td>Commit often for each feature/fix, ensuring that commits are small,
+                well-defined and have clear, descriptive messages
+            </td>
+        </tr>
+        <tr>
+            <td>6.1
+            </td>
+            <td>Fully document the deployment procedure in a section in a README file,
+                written using consistent and effective markdown formatting that is
+                well-structured, easy to follow, and has few grammatical errors.
+            </td>
+        </tr>
+        <tr>
+            <td>7.1
+            </td>
+            <td>Implement efficient model code in the solution
+            </td>
+        </tr>
+    </tbody></table>
+    <h2>
+        All Merit criteria must be achieved for merit to be awarded.
+    </h2>
+    <h1>Distinction Performance</h1>
+    <p>
+        At this level, a learner will have <span class="header-red-small">achieved all pass and merit criteria</span>,
+        as
+        described above, and will demonstrate characteristics of high-level performance
+        as described below:
+    </p>
+    <p>
+        <strong>Characteristics of performance at DISTINCTION level:</strong>
+    </p>
+
+    <p>
+        The learner has documented a clear, <strong>justified rationale</strong> for a
+        real-world application. The development of the project has resulted in a
+        fully-functioning, interactive web application.
+    </p>
+    <p>
+        The finished project is judged to be publishable in its current form with an
+        evidenced professional-grade user interface and interaction adhering to current
+        practice. There are no logic errors in the code. Where there is a clear breach of
+        accepted design/UX principles or accepted good practice in code organisation,
+        these are fully justified, appropriate and acceptable to the target user. It
+        matches the design and demonstrates the characteristics of <strong>craftsmanship
+        </strong>in the code. The resulting application is original and not a copy of
+        any walkthrough projects encountered in the unit
+    </p>
+
+    <p>
+        <strong>Amplification (craftsmanship)</strong>
+    </p>
+    <p>
+        <strong>Front-End Design</strong>
+    </p>
+    <p>
+        The design of the web application demonstrates the main principles of good UX
+        design:
+    </p>
+    <p>
+        Information Hierarchy
+    </p>
+    <ul>
+        <li>semantic markup is used to convey structure - all information displayed on
+            the site is presented in an organised fashion with each piece of information
+            being easy to find
+        </li><li>all information displayed on the site is presented in an organised fashion
+            with each piece of information being easy to find
+        </li><li>all resources on the site are easy to find, allowing users to navigate the
+            layout of the site intuitively
+        </li><li>information is presented and categorised in terms of its priority
+            <p>
+                User Control
+            </p>
+            <ul>
+                <li>all interaction with the site would be likely to produce a positive
+                    emotional response within the user. This is down to the flow of information
+                    layout, use of colour, clear and unambiguous navigation structures and all
+                    interaction feedback
+                </li><li>when displaying media files, the site avoids aggressive automatic pop-ups
+                    and autoplay of audio; instead letting the user initiate and control such
+                    actions
+                </li><li>users who direct to a non-existent page or resource are redirected back to
+                    the main page without having to use the browser navigation buttons
+                </li><li>users are never asked for information that the application already has (e.g.
+                    a contact form does not ask a logged in user for an email address).
+                </li><li>the user is shown progress indicators and feedback on transactions.
+                </li><li>errors resulting from user or data actions are reported to the user
+                    <p>
+                        Consistency
+                    </p>
+                    <ul>
+                        <li>evident across all pages/sections and covers interactivity as well as design
+                        </li><li>consistency across all data operations, including in the reporting
+                            <p>
+                                Confirmation
+                            </p>
+                            <ul>
+                                <li>user and data actions are confirmed where appropriate, feedback is given at
+                                    all times
+                                    <p>
+                                        Accessibility
+                                    </p>
+                                    <ul>
+                                        <li>there is clear conformity to accessibility guidelines across all
+                                            pages/sections and in all interactivity
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        Any design decisions that contravene accepted user interaction, user experience
+        design principles are identified and described<strong> </strong>(comments in
+        code and/or a section in the README)
+    </p>
+    <p>
+        <strong>Development and Implementation</strong>
+    </p>
+    <p>
+        Code demonstrates characteristics of ‘clean code’
+    </p>
+    <p>
+        Consistent and appropriate naming conventions within code and in file
+        naming, e.g.
+    </p>
+    <ul>
+        <li>file names, class names, function names and variable names are descriptive
+            and consistent
+        </li><li>for cross-platform compatibility, file and directory names will not have
+            spaces in them and will be lower-case only
+        </li><li>all HTML attributes, CSS rules, code variables and function names are
+            consistent in format, follow standards for the language and are appropriate and
+            meaningful
+        </li><li>app urls are consistent
+            <p>
+                File structure
+            </p>
+            <ul>
+                <li>whenever relevant, files are grouped in directories by file type (e.g. an
+                    assets directory will contain all static files and code may be organised into
+                    sub-directories such as css, js, etc)
+                </li><li>there is a clear separation between custom code and any external files (for
+                    example, library files are all inside a directory named 'libraries')
+                </li><li>files are named consistently and descriptively, without spaces or
+                    capitalisation to allow for cross-platform compatibility.
+                    <p>
+                        Readability
+                    </p>
+                    <ul>
+                        <li>code is indented in a consistent manner to ease readability and there are no
+                            unnecessary repeated blank lines (and never more than 2)
+                        </li><li>id/class(CSS and JavaScript)/function/variable names clearly indicate their
+                            purpose
+                        </li><li>all code is split into well-defined and commented sections
+                        </li><li>Semantic markup is used to structure HTML code
+                        </li><li>HTML, CSS, Javascript and Python are kept in separate, linked files
+                        </li><li>CSS files are linked to in the HTML file’s head element
+                        </li><li>non-trivial Javascript code files are linked to at the bottom of the body
+                            element (or bottom of the head element if needs loaded before the body HTML)
+                            <p>
+                                Defensive design
+                            </p>
+                            <ul>
+                                <li>all input data is validated (e.g. presence check, format check, range check)
+                                </li><li>internal errors are handled gracefully and users are notified of the problem
+                                    where appropriate
+                                    <p>
+                                        Comments
+                                    </p>
+                                    <ul>
+                                        <li>all custom code files include clear and relevant comments explaining the
+                                            purpose of code segments
+                                            <p>
+                                                Compliant code
+                                            </p>
+                                            <ul>
+                                                <li>HTML code passes through the official W3C validator with no issues
+                                                </li><li>CSS code passes through the official (Jigsaw) validator with no
+                                                    issues
+                                                </li><li>JavaScript code passes through a linter (e.g. jslint.com) with no
+                                                    major
+                                                    issues
+                                                </li><li>Python code is consistent in style and conforms to the PEP8 style
+                                                    guide
+                                                    (or
+                                                    another explicitly mentioned style guide, such as Google's)
+                                                    <p>
+                                                        Robust code
+                                                    </p>
+                                                    <ul>
+                                                        <li>no logic errors are found when running code
+                                                        </li><li>errors caused by user actions are handled
+                                                        </li><li>where used, API calls that fail to execute or return data
+                                                            will
+                                                            be handled
+                                                            gracefully, with the site users notified in an obvious way
+                                                        </li><li>inputs are validated when necessary
+                                                        </li><li>navigating between pages via the back/forward buttons can
+                                                            never
+                                                            break the
+                                                            site, there are no broken links
+                                                        </li><li>user actions do not cause internal errors on the page or in
+                                                            the
+                                                            console
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        The entire design is implemented, providing <strong>an excellent solution to the
+            users' demands and expectations</strong> and <strong>security
+            consideration</strong>.
+    </p>
+    <p>
+        <strong>Real-world application</strong>
+    </p>
+    <ul>
+        <li>Understandable site-specific content is used rather than Lorem Ipsum
+            placeholder text.
+        </li><li>All links to external pages open in a separate tab when clicked
+        </li><li>The final application is aligned to the user stories presented at the start
+            of the project
+        </li>
+    </ul>
+    <p>
+        Testing procedures are comprehensive, with a good level of coverage, and have
+        been followed. All noticeable errors have been corrected or documented:
+    </p>
+    <p>
+        Security features and practice are evidenced
+    </p>
+    <ul>
+        <li>passwords and secret keys are stored in environment variables or in files
+            that are in .gitignore and are never committed to the repository
+        </li><li>any functionality requiring log-in is available only to logged-in users
+        </li><li>user permissions and levels of access are appropriate
+        </li>
+    </ul>
+    <p>
+        Framework conventions are followed and used correctly. Including the following:
+    </p>
+    <p>
+        Django:
+    </p>
+    <ul>
+        <li>Templates
+        </li><li>Apps
+        </li><li>Models
+        </li><li>Views
+        </li><li>Placing logic in the most relevant components demonstrates an understanding
+            of the Model-View-Controller(Template) pattern is evident through the placing of
+            logic in the most appropriate components.
+        </li><li>Configuration and settings files are well-organised
+        </li>
+    </ul>
+    <p>
+        Security features and practice are evidenced.
+    </p>
+    <ul>
+        <li>passwords and secret keys are stored in environment variables or in files
+            that are in .gitignore and are never committed to the repository
+        </li><li>any functionality requiring log-in is available only to logged-in users
+        </li><li>user permissions and levels of access are appropriate
+        </li>
+    </ul>
+    <p>
+        Data is well structured.
+    </p>
+    <ul>
+        <li>Data is fully modelled and matches the schema.
+        </li><li>Datastore configuration is kept in a single location where it can be changed
+            easily.
+        </li><li>data is well-structured, organised into logical entities with clear
+            relationships between them
+        </li><li>all CRUD functionality is present and working, and actions are immediately
+            reflected in the
+            <p>
+                Front-End
+            </p>
+            <ul>
+                <li>any data used across multiple apps is shared and not duplicated.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        Configuration and dependencies files are kept up to date. Separate
+        versions/branches of these are commits where relevant. Datastore configuration
+        is kept in a single location and can be changed easily. The datastore is not
+        accessible to the regular user without going through the code.
+    </p>
+    <p>
+        Testing procedures are comprehensive, with a good level of coverage, and have
+        clearly been followed. There is clear evidence of testing and this is
+        demonstrated in git commits. All noticeable errors have been corrected or
+        documented:
+    </p>
+    <ul>
+        <li>navigating between pages via the back/forward buttons can never break the
+            site, there are no broken links
+        </li><li>user actions do not cause internal errors on the page or in the console
+        </li>
+    </ul>
+
+    <!--   END PROJECT 4 -->
+    <p>
+        Recommended structure for a README.md file:
+    </p>
+    <p>
+        <br>As a mandatory part of the submission, your project must have a
+        readme file named README.md, in markdown format, that will describe all aspects
+        of your project.
+    </p>
+    <p>
+        The link below provides an official example of an expected structure for your
+        readme file
+    </p>
+    <p>
+    <br><br>NOTE:
+    </p>
+    <p>
+        While it is a requirement for your README to be in English, we also strongly
+        recommend that your site is in English too. The assessment will be conducted in
+        English so to ensure that the functionality and navigation can be fully
+        assessed, we recommend that the site is in English. If the site is in a language
+        other than English, at a very minimum you should ensure you have correctly set
+        the <code>lang </code>attribute in the HTML to the character code of the web
+        apps content language. This will allow the browser to attempt a translation into
+        English.
+    </p>
+    <h1 id="plagiarism">
+        Plagiarism
+    </h1>
+    <p>
+        <br>Plagiarism, as defined by the Oxford dictionary is “<em>the practice
+            of taking someone else's work or ideas and passing them off as one's own.</em>”
+        It is a serious academic offence for which there are serious consequences.
+    </p>
+    <p>
+        It is acceptable to use and reference others’ code however it is an academic
+        plagiarism offence if any piece of work which is not entirely the student’s own
+        is not correctly referenced or acknowledged. All student projects submitted
+        will be reviewed for plagiarism. This includes checking code comparison tools,
+        plagiarism software, review of git commit history and other mechanisms.
+    </p>
+    <p>
+        It is the responsibility of each student to ensure that any direct or indirect
+        inclusion of the work of others is fully and adequately acknowledged. We
+        appreciate that plagiarism may be unintentional however it will still be treated
+        as an offence. The Tutoring team can answer any plagiarism related queries, but
+        as a general rule, if in doubt, include attribution of all sources.
+    </p>
+    <p>
+        Students are encouraged to ask mentors, tutors and their peers for advice about
+        their project work but any submission should not include any code written by
+        others, unless it is explicitly credited to them. Failure to correctly credit
+        code that a student hasn’t created themselves will be considered plagiarism and
+        will result in a failing grade. Blatant or repeat offences of plagiarism will
+        not be tolerated and will result in stringent penalties being applied, including
+        removal from the course.
+    </p>
+
+    <h1 id="assessment-policy">
+        Assessment Policy<br>
+    </h1>
+    <p>
+        The programme is assessed by 5 milestone projects. Some modules have challenges
+        for you to complete however these are not graded. All 5 projects must be
+        separate submissions, meeting the specified project brief requirements. All 5
+        projects must be passed before the Diploma can be awarded.<br>
+    </p>
+    <p>
+        Your project is due at 12.00 noon (Irish time) on the specified submission date.
+        Please contact Student Care if you are unclear what your submission date
+        is.<br><br>Any project not submitted on time will be considered a
+        fail. The project will be accepted up to 10 days after the original submission
+        date, subject to payment of a late submission fee of €150. The grade will also
+        be capped at the pass mark. Code Institute reserves the right not to accept any
+        projects submitted after 10 days. Repeated late submissions will not be
+        tolerated.<br><br><strong>Extenuating circumstances </strong>are
+        unforeseen significant events which may affect your ability to complete the
+        course/submit your projects on time. Such circumstances include serious illness,
+        hospitalisation, immediate family bereavement etc.
+    </p>
+    <p>
+        Supporting documentation for such circumstances must be provided for the
+        extenuating circumstance to be considered. Foreseen events such as holidays,
+        work commitments, weddings etc. are not considered extenuating.&ZeroWidthSpace;<br>
+    </p>
+    <p>
+        If you find yourself in this situation, please contact Student Care as soon as
+        is practical to discuss it. These instances are treated on a case by case
+        basis. Supporting documentation e.g. medical certificate will be required for
+        any additional time to be granted.</p>
+    <h4>Please note, it will be assumed that
+        you are proceeding with your studies as intended, until you advise us
+        otherwise</h4>.
+
+    <h1 id="completion">Completing your portfolio project</h1>
+    <p>Your work on the portfolio project for this module is ready for submission once you've completed the following
+        steps:
+    </p>
+    <ol>
+        <li>You have completed all of the functional requirements for the project work</li>
+        <li>You have deployed the project and documented the deployment</li>
+        <li>You have tested the project extensively and documented your testing</li>
+        <li>You have written sufficient overall documentation in the README.md file in English</li>
+        <!-- <li>You have correctly set the <code>lang</code> attribute in the html to the web apps content language</li> -->
+        <li>You have had your final project review session with your mentor and addressed their feedback if any</li>
+        <li>You have checked you have met all assessment criteria for the learning outcomes </li>
+        <li>You are overall happy with your work</li>
+    </ol>
+    <h1 id="notification">Grade Notification</h1>
+    <p>Results are sent by email. The typical timeframe for receiving these from the date of submission are
+    </p><ul>
+        <li><strong>Project 1 &amp; 2:</strong> Up to 4 weeks</li>
+        <li><strong>Project 3 &amp; 4:</strong> Up to 6 weeks</li>
+        <li><strong>Project 5:</strong> Up to 8 weeks. This result will be sent with your overall grade for the course.
+        </li>
+    </ul>
+    <p> In the unlikely event that you have not received your results within the above timeframes, please contact
+        Student Care.</p>
+    <h1 id="resubmissions">
+        Resubmissions
+    </h1>
+    <p>
+        If a project submission does not meet the required standard, you may resubmit
+        your project to achieve a pass. Student Care will liaise with you to arrange the
+        timeframe for a resubmission.
+    </p>
+    <p>
+        The grade for any project resubmitted will be capped at the pass mark. You will
+        not be informed of the actual result. The maximum number of resubmissions per
+        project is two. The resubmission fee is €50. A student whose project has
+        received a pass mark is not permitted to resubmit their project with a view to
+        achieving a higher grade.
+    </p>
+    <h1 id="appeals">
+        Appeals
+    </h1>
+    <p>
+        Where a student feels they have been unfairly marked or that the marking is
+        inconsistent with the assessment criteria, they may appeal their grade. The
+        appeal must be requested in writing to Student Care within 2 weeks of the grade
+        being released. In doing so, you must also outline the grounds on which you are
+        appealing the awarded grade. The project in its previously submitted format will
+        be graded by a different assessor. You may not make any changes to your project
+        (source code or live version) while the appeal process is taking place. The
+        result of the appeal, which may be higher or lower than the original grade will
+        be the final grade awarded. There is a €50 fee for the appeal which will be
+        refunded if the outcome of the appeal is a higher passing grade. The appeal
+        process will be completed within 5 weeks.
+    </p>
+    <h1 id="final-grade">Final Grade Calculation</h1>
+    <p>The five projects all contribute to your final grade. This is calculated
+        from the points awarded for a pass/merit/distinction
+        multiplied by the number of credit points per module.
+    </p>
+
+
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+</body>
+        {% endif %}
         </div>
-        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
     </div>
+
 </div>
 {% endblock content %}
