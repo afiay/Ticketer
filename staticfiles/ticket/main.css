@@ -50,11 +50,18 @@ a.article-title:hover {
 }
 
 .article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
+  padding: 50px;
+  height: 250px;
+  width: 250px;
 }
-
+.badge badge-warning{
+    color: #212529;
+    background-color: #eda011;
+  }
+.button_edit {
+    float:right ;
+    margin-left: px;
+}
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
@@ -112,3 +119,4 @@ a.article-title:hover {
 .replies {
     margin-left: 20px;
 }
+

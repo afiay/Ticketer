@@ -12,9 +12,9 @@
 			   			<span class="badge badge-warning">{{ ticket.status }}</span>
 			   		{% elif ticket.status == 'O' %}
 			   			<span class="badge badge-info">{{ ticket.status }}</span>
-			   		{% elif ticket.status == 'W' %}
+			   		{% elif ticket.status == 'J' %}
 			   			<span class="badge badge-success">{{ ticket.status }}</span>	
-			 		{% elif ticket.status == 'C' %}
+			 		{% elif ticket.status == 'S' %}
 			   			<span class="badge badge-secondary">{{ ticket.status }}</span>
 			 		{% elif ticket.status %}
 			   			<span class="badge badge-light">{{ ticket.image }}</span>
@@ -41,7 +41,7 @@
 	<div class="replie-thread">
 	<h5>Kommentar</h5>
 	{% if not object.replies.all %}
-		<p>Skriv den första kommentaren</p>
+		<p>Skriv den första kommentär</p>
 	{% else %}
 		{% for replie in object.replies.all %}
 			<div class="replie">

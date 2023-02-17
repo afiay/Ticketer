@@ -22,7 +22,7 @@
 	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
 		    <div class="container">
 		      {% if user.is_authenticated %}
-			    <a class="navbar-brand mr-4" href="/">Aritco | Ticketer</a>
+			    <a class="navbar-brand mr-4" href="/">Aritco | Lift</a>
 			      	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
 			      		<span class="navbar-toggler-icon"></span>
 			      	</button>
@@ -32,7 +32,7 @@
 			          	<a class="nav-item nav-link" href="{% url 'ticket-home' %}">Feeds</a>
 			          {% endif %}
 			  {% else %}
-			  	<h2 class="navbar-brand mr-4">Welcome to Aritco | Ticketer</a>
+			  	<h2 class="navbar-brand mr-4">Welcome to Aritco | Lift</a>
 		      {% endif %}
 		    </div>
 	
@@ -46,8 +46,9 @@
 			</svg>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'ticket-create' %}">New Ticket</a>
-          <a class="dropdown-item" href="{% url 'profile' %}">Edit Profile</a>
+          <a class="dropdown-item" href="{% url 'ticket-create' %}">Ny biliet</a>
+			<a class="dropdown-item" href="{% url 'user-tickets' user.username %}">Mina bilietter</a>
+          <a class="dropdown-item" href="{% url 'profile' %}">Min sida</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
 		  {% else %}
@@ -71,18 +72,20 @@
 	    			</div>
 	    		{% endfor %}
 	    	{% endif %}
-	      {% block content %}{% endblock %}
+	      {% block content %}
+
+		  {% endblock %}
 	    </div>
 	    {% if user.is_authenticated %}
 		    <div class="col-md-4">
 		      <div class="content-section">
-		        <h3> Ticketer | Filter</h3>
-		        <p class='text-muted'> Find Specific Ticket
+		        <h3> Lift | Filter</h3>
+		        <p class='text-muted'> Find Specific Lift
 		          <ul class="list-group">
 		            <li class="btn btn-outline-info" ><a class="nav-item nav-link" href="{% url 'filtered-tickets' 'N' %}">Ny</a></li>
 		            <li class="btn btn-outline-info" ><a class="nav-item nav-link" href="{% url 'filtered-tickets' 'O' %}">Oppet</a></li>
-		            <li class="btn btn-outline-info" ><a class="nav-item nav-link" href="{% url 'filtered-tickets' 'W'%}">Pågånde</a></li>
-		            <li class="btn btn-outline-info" ><a class="nav-item nav-link" href="{% url 'filtered-tickets' 'C'%}">Avslutad</a></li>
+		            <li class="btn btn-outline-info" ><a class="nav-item nav-link" href="{% url 'filtered-tickets' 'J'%}">Jobbar</a></li>
+		            <li class="btn btn-outline-info" ><a class="nav-item nav-link" href="{% url 'filtered-tickets' 'S'%}">Stängd</a></li>
 		          </ul>
 		        </p>
 		      </div>

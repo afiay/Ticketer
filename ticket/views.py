@@ -12,6 +12,7 @@ from guardian.shortcuts import get_objects_for_user
 from .models import Ticket, Replie
 
 
+
 @login_required
 def home(request):
 	context = {

@@ -19,9 +19,9 @@
 			   			<span class="badge badge-warning">{{ ticket.status }}</span>
 			   		{% elif ticket.status == 'O' %}
 			   			<span class="badge badge-info">{{ ticket.status }}</span>
-			   		{% elif ticket.status == 'W' %}
+			   		{% elif ticket.status == 'J' %}
 			   			<span class="badge badge-success">{{ ticket.status }}</span>	
-			 		{% elif ticket.status == 'C' %}
+			 		{% elif ticket.status == 'S' %}
 			   			<span class="badge badge-secondary">{{ ticket.status }}</span>
 			 		{% elif ticket_location.status %}
 			   			<span class="badge badge-light">{{ ticket_location.status }}</span>
@@ -33,7 +33,7 @@
 				<div class="replie-thread">
 					<h5>Kommentar</h5>
 					{% if not ticket.replies.all %}
-						<p>Skriv den första kommentaren </p>
+						<p>Skriv den första kommentär </p>
 					{% else %}
 						{% for replie in ticket.replies.all %}
 							<div class="replie">
@@ -48,10 +48,10 @@
 						{% endfor %}
 					{% endif %}
 					{% if user.is_authenticated %}
-			          	<a href="{% url 'add-replie' ticket.id %}">Add Reply</a>
+			          	<a href="{% url 'add-replie' ticket.id %}">Svara</a>
 			        {% else %}
-				        <a href="{% url 'login' %}">Login Here to Reply</a>
-				        <a href="{% url 'register' %}">Register</a>
+				        <a href="{% url 'login' %}">Logga in för att svara</a>
+				        <a href="{% url 'register' %}">Bli Medlem</a>
 				    {% endif %}  
 				</div>
 			</div>

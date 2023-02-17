@@ -8,6 +8,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from guardian.shortcuts import assign_perm
 
 
+
 # Create your models here.
 class Ticket(models.Model):
 	urgency_choices = [
@@ -33,12 +34,10 @@ class Ticket(models.Model):
     ]
 	
 	ticket_status = [
-	    ('N', 'New'),
-	    ('O', 'Open'),
-	    ('W', 'Working'),
-	    ('C', 'Closed'),
-	    ('D', 'Draft'),
-	    ('P', 'Publish'),
+	    ('N', 'Ny'),
+	    ('O', 'Oppet'),
+	    ('J', 'Jobbar'),
+	    ('S', 'Stängd'),
 	]
 	ticket_location = [
 	    ('ALL', 'ALL'),

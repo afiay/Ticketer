@@ -5,7 +5,7 @@
 			<img class="rounded-circle article-img" src="{{ ticket.author.profile.image.url }}">
 			<div class="media-body">
 			    <div class="article-metadata">
-			      	<a class="mr-2" href="{% url 'user-tickets' ticket.author.username %}">{{ ticket.author }}</a>
+			      	<a class="mr-2" href="{% url 'user-tickets' ticket.author.username %}">{{ ticket.author }} |</a>
 			      	<small class="text-muted">{{ ticket.date_ticketed|date:"F d, Y g:i A" }}</small>
 			    </div>
 			   	<h2><a class="article-title" href="{% url 'ticket-detail' ticket.id %}">{{ ticket.title }}  </a>
@@ -13,12 +13,10 @@
 			   			<span class="badge badge-warning">{{ ticket.status }}</span>
 			   		{% elif ticket.status == 'O' %}
 			   			<span class="badge badge-info">{{ ticket.status }}</span>
-			   		{% elif ticket.status == 'W' %}
+			   		{% elif ticket.status == 'J' %}
 			   			<span class="badge badge-success">{{ ticket.status }}</span>	
-			 		{% elif ticket.status == 'C' %}
+			 		{% elif ticket.status == 'S' %}
 			   			<span class="badge badge-secondary">{{ ticket.status }}</span>
-			 		{% elif ticket.status %}
-			   			<span class="badge badge-light">{{ ticket.status }}</span>
 			   		{% endif %}
 			   </h2>
 			   	<h5>
@@ -45,7 +43,7 @@
 						{% endfor %}
 					{% endif %}
 					{% if user.is_authenticated %}
-			          	<a href="{% url 'add-replie' ticket.id %}">Lägg updatering</a>
+			          	<a href="{% url 'add-replie' ticket.id %}">Lägg in updatering</a>
 			        {% else %}
 				        <a href="{% url 'login' %}">Logga in</a>
 				        <a href="{% url 'register' %}">Bli Medlem</a>
@@ -78,3 +76,15 @@
 	{% endif %}
 
 {% endblock content %}
+
+import js2py
+
+js = """
+function autoRefresh() {
+        		window.location = window.location.href;
+    		}
+    		setInterval('autoRefresh()', 10000);
+
+		  <script>
+    		
+		</script>
