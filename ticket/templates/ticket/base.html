@@ -29,7 +29,10 @@
 			      <div class="collapse navbar-collapse" id="navbarToggle">
 			        <div class="navbar-nav mr-auto">
 			          {% if user.is_staff %}
-			          	<a class="nav-item nav-link" href="{% url 'ticket-home' %}">Feeds</a>
+			          	<a class="nav-item nav-link" href="{% url 'ticket-home' %}">Ticket</a>
+						<a class="nav-item nav-link" href="/posts/">Posts</a>
+						<a class="nav-item nav-link" href="{% url 'event-list' %}">Events</a>
+						
 			          {% endif %}
 			  {% else %}
 			  	<h2 class="navbar-brand mr-4">Welcome to Aritco | Lift</a>

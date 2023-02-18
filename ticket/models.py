@@ -99,7 +99,7 @@ Ticket.objects.order_by('-urgency')
 @receiver(post_save, sender=Ticket)
 def set_permission(sender, instance, **kwargs):
 	assign_perm("view_ticket", instance.author, instance)
-	group = Group.objects.get(name='Ticketing Staff')
+	group = Group.objects.get(name='Staff')
 	assign_perm("view_ticket", group, instance)
 	assign_perm("change_ticket", group, instance)
 	assign_perm("delete_ticket", group, instance)

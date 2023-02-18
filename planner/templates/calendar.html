@@ -1,0 +1,25 @@
+{% extends 'ticket/base.html' %} {% block content %}
+<a href="/planner/" class="btn btn-grey">Back</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 card mb-4  mt-4 left top">
+      <div class="card-body">
+        <div class="media">
+          <img class="rounded-circle account-img" style="border-radius=50%" src="{{ user.profile.image.url }}">
+          <div class="media-body">
+            <p class="account-heading">{{ event.author.first_name }} {{ calendar.author.last_name }}</p>
+            <p class="text-secondary">{{ user.email }}</p>
+            <ul><li>{{ event.start_time }} </li>
+            <li>{{ event.end_time }} </li></ul>
+          </div>
+        </div>
+        <h1>{% block name %} {{ event.name }} {% endblock name %}</h1>
+        {{ event.description | safe }}
+      </div>
+
+            <p class=" text-muted">{{ event.created_on }}</p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

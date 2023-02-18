@@ -33,7 +33,16 @@ ALLOWED_HOSTS = []
 
 TIME_ZONE = 'Europe/Stockholm'
 # Application definition
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'skin': 'moono',
+        'toolbar': 'basic',
+        'height': 'full',
+        'width': 'full',
+        'removePlugins': 'exportpdf',
+        'toolbarCanCollapse':'true'
+    },
+}
 INSTALLED_APPS = [
     'ticket.apps.TicketConfig',
     'users.apps.UsersConfig',
@@ -46,6 +55,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'guardian',
     'blog',
+    'ckeditor', # CKEditor config
+    'ckeditor_uploader', # CKEditor media uploader
+    'planner',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +146,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = BASE_DIR.joinpath('media')
 MEDIA_URL = '/media/'
 
+CKEDITOR_UPLOAD_PATH="uploads/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
